@@ -1,9 +1,13 @@
+import enumarate.Builder;
+import enumarate.Type;
+import enumarate.Wood;
+
 public class FindGuitarTester {
 	public static void main(String[] args) {
 		// Set up Rick’s guitar inventory
 		Inventory inventory = new Inventory();
 		initializeInventory(inventory);
-		Guitar whatErinLikes = new Guitar("", 0, "fender", "Stratocastor", "electric", "Alder", "Alder");
+		Guitar whatErinLikes = new Guitar("", 0, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
 		Guitar guitar = inventory.search(whatErinLikes);
 		if (guitar != null) {
 			System.out.println("Erin, you might like this " + guitar.getBuilder() + " " + guitar.getModel() + " "
