@@ -11,11 +11,12 @@ public class FindGuitarTester {
 		Inventory inventory = new Inventory();
 		initializeInventory(inventory);
 		
-		//Erin will search by GuitarSpec instead of a full guitar
+		//Erin will search by GuitarSpec instead of a full guitar object
 		//Guitar whatErinLikes = new Guitar("", 0, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
-		GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+		GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, 6, Wood.ALDER, Wood.ALDER);
 		
-		/* This function didn't do exactly what customer want.
+		/* --------------------------------------------------------------------------------------------
+		 * This function didn't do exactly what customer want.
 		*  Which is give buyers all matching guitars that they want.
 		*/  
 //		System.out.println("--- Search first matching guitar ---");
@@ -28,7 +29,8 @@ public class FindGuitarTester {
 //			System.out.println("Sorry, Erin, we have nothing for you.");
 //		}
 		
-		/* This function do exactly what customer (guitar shop owner) want.
+		/* --------------------------------------------------------------------------------------------
+		 * This function do exactly what customer (guitar shop owner) want.
 		*/  
 //		System.out.println("");
 //		System.out.println("--- Search all matching guitar ---");
@@ -45,8 +47,9 @@ public class FindGuitarTester {
 //			System.out.println("Sorry, Erin, we have nothing for you.");
 //		}
 		
-		/* Improve the system by encapsulation.
-		 * Replace all general attributes of a guitar by GuitarSpec Object
+		/* --------------------------------------------------------------------------------------------
+		 * Improve the system by encapsulation.
+		 * Replace all general properties of a guitar by GuitarSpec Object
 		 */
 		System.out.println("");
 		System.out.println("--- Search all matching guitar by using GuitarSpec ---");
@@ -56,7 +59,7 @@ public class FindGuitarTester {
 			for (Iterator<Guitar> i = matchingGuitars.iterator(); i.hasNext();) {
 				Guitar guitar = (Guitar) i.next();
 				GuitarSpec spec = guitar.getSpec();
-				System.out.println(" We have a " + spec.getBuilder() + " " + spec.getModel() + " "
+				System.out.println(" We have a " + spec.getBuilder() + " " + spec.getModel() + " " + spec.getNumStrings() + "-String "
 						+ spec.getType() + " guitar:\n " + spec.getBackWood() + " back and sides,\n "
 						+ spec.getTopWood() + " top.\n You can have it for only $" + guitar.getPrice() + "!\n ----");
 			}
@@ -66,7 +69,7 @@ public class FindGuitarTester {
 	}
 
 	private static void initializeInventory(Inventory inventory) {
-		inventory.addGuitar("V95693", 1499.95, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
-		inventory.addGuitar("V9512", 1549.95, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+		inventory.addGuitar("V95693", 1499.95, Builder.FENDER, "Stratocastor", Type.ELECTRIC, 6, Wood.ALDER, Wood.ALDER);
+		inventory.addGuitar("V9512", 1549.95, Builder.FENDER, "Stratocastor", Type.ELECTRIC, 6, Wood.ALDER, Wood.ALDER);
 	}
 }

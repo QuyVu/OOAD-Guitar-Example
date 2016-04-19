@@ -4,11 +4,13 @@ public class Guitar {
 	private double price;
 	private GuitarSpec spec;
 
+	/* Using GuitarSpec object to encapsulate all 
+	 * the general property of a guitar
+	 * Guitar object will be more simpler
+	*/
 	public Guitar(String serialNumber, double price, GuitarSpec spec) {
 		this.serialNumber = serialNumber;
 		this.price = price;
-		// Using GuitarSpec object to encapsulate all the general attribute of a
-		// guitar
 		this.spec = spec;
 	}
 
